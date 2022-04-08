@@ -1,0 +1,8 @@
+body{
+  background : url("assets/data/fond.jpg") no-repeat left center fixed;
+}
+
+#hexagon{
+  padding-top: 2%;
+  padding-bottom: 2%;
+}

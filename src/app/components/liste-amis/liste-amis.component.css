@@ -1,0 +1,52 @@
+.carteInfos{
+  position: absolute;
+  z-index : 100;
+  width: 33%;
+}
+
+.carteInfos1{
+	top: 15%;
+    height: 80%;
+    position: fixed;
+    background-color: #1e2530;
+    width: 33.33%;
+    margin-left: 14%;
+    overflow: scroll;
+}
+
+.ami{
+	margin-bottom: 20px;
+    border-bottom: 3px solid white;
+    padding-bottom: 5px;
+}
+
+.glyphicon {
+  font-size: 50px;
+}
+
+.gommetteProfil{
+   height: 15px;
+   width: 15px;
+   border-radius: 15px;
+   position: absolute;
+}
+
+.etatProfil0{
+   background-color: rgb(255, 255, 255);
+}
+
+.etatProfil1{
+   background-color: rgb(0, 200, 0);
+}
+
+.etatProfil2{
+   background-color: rgb(200, 0, 0);
+}
+
+.etatProfil3{
+   background-color: rgb(250, 230, 0);
+}
+
+.etatProfil4, .etatProfil5, .etatProfil6{
+   background-color: rgb(20, 20, 190);
+}

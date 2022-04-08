@@ -1,0 +1,103 @@
+<div *ngIf="steamId == ''" class="bienvenue col-lg-offset-2 col-lg-8">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h1>Bienvenue sur Pseudo Tracker Steam !</h1>
+    </div></div>
+    <div *ngIf="steamId == ''" class="noPadding connect col-lg-8 col-lg-offset-2 col-md-offset-2 col-md-8">
+        <div class="noPadding col-lg-2 col-lg-offset-5 col-md-2 col-md-offset-5">
+            <div class="hexagon-item">
+                <app-connexion></app-connexion>
+            </div>
+        </div>
+    </div>
+
+
+<div class="{{preloader}}">
+    <div class="loader">
+        <div *ngIf="steamId != ''" class="loader-outter"></div>
+        <div *ngIf="steamId != ''" class="loader-inner"></div>
+
+        <div class="indicator">
+            <svg width="16px" height="12px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-12 col-md-12 col-sm-12 pd-5 pt-5">
+    <div class="" class="pt-2">
+        <div class="col-lg-2 col-lg-offset-2" id="hexagon">
+            <div class="col-lg-2 col-lg-offset-1">
+                <app-liste-amis [steamId]="steamId"></app-liste-amis>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-lg-offset-1" id="hexagon">
+            <div class="col-lg-2 col-lg-offset-1">
+                <app-profil [steamId]="steamId"></app-profil>
+            </div>
+        </div>
+        <div class="col-lg-2 col-lg-offset-1" id="hexagon">
+            <div class="col-lg-2 col-lg-offset-1">
+                <app-deconnexion></app-deconnexion>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pt-5" >
+    <div class="col-lg-12">
+        <div class="pt-lg-5">
+            <app-trieur [jeuComponent]="jeu"></app-trieur>
+        </div>
+    </div>
+    <div class="col-lg-12 pt-lg-5">
+        <app-jeu [steamId]="steamId" #jeu></app-jeu>
+    </div>
+</div>
+
+<footer class="col-lg-12 footer">
+  <div class="col-lg-12 pt-5">
+    <div class ="col-lg-offset-1 col-lg-5" style="margin-top : 20px;">
+    <div class="col-lg-12">
+      <div class ="col-lg-3" id="photo">
+        <img class="fit-picture" src="assets/pp/rodrigue.meunier.jpg" alt="image Rodrigue Meunier" style=" max-width: 75px;max-height: 75px;">
+      </div>
+      <div class ="col-lg-8" id="infos">
+        <h3>Rodrigue Meunier</h3>
+        <p>rodrigue.meunier.etu@univ-lemans.fr</p>
+      </div>
+    </div>
+    <div class="col-lg-12" style="margin-top : 10px;">
+      <div class ="col-lg-3" id="photo">
+        <img class="fit-picture" src="assets/pp/mathis.morisseau.jpg" alt="image Mathis Morisseau" style=" max-width: 75px;max-height: 75px;">
+      </div>
+      <div class ="col-lg-8" id="infos">
+        <h3>Mathis Morisseau</h3>
+        <p>mathis.morisseau.etu@univ-lemans.fr</p>
+      </div>
+    </div>
+  </div>
+    <div class ="col-lg-offset-1 col-lg-5" style="margin-top : 20px;">
+        <div class="col-lg-12">
+      <div class ="col-lg-3" id="photo">
+        <img class="fit-picture" src="assets/pp/nicolas.lemoult.jpg" alt="image Nicolas Lemoult" style=" max-width: 75px;max-height: 75px;">
+      </div>
+      <div class ="col-lg-8" id="infos">
+        <h3>Nicolas Lemoult</h3>
+        <p>nicolas.lemoult.etu@univ-lemans.fr</p>
+      </div>
+    </div>
+      <div class="col-lg-12"  style="margin-top : 10px;">
+        <div class ="col-lg-3" id="photo">
+          <img class="fit-picture" src="assets/pp/pierreL-mro.png" alt="image Pierre-Louis Mrozowski" style=" max-width: 75px;max-height: 75px;">
+        </div>
+        <div class ="col-lg-8" id="infos">
+          <h3>Pierre-Louis Mrozowski</h3>
+          <p>pierre-louis.mrozowski.etu@univ-lemans.fr</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

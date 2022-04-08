@@ -1,0 +1,23 @@
+<div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-2 col-lg-offset-1">
+      <input (input)="recherche()" type="text" class="Recherche-Input" placeholder="Recherche" #searchInput />
+    </div>
+
+    <div class="col-lg-2 col-lg-offset-2">
+    <button (click)="trier('name')" class="Button-Input" #name>
+        Nom<span *ngIf="!croissant && selecteur == 'name'" class="glyphicon glyphicon-download"></span><span *ngIf="croissant && selecteur == 'name'" class="glyphicon glyphicon-upload"> </span>
+    </button>
+    </div>
+
+    <div class="col-lg-2">
+    <button (click)="trier('tpsJeu')" class="Button-Input" #tpsJeu>
+        Temps de Jeu<span *ngIf="!croissant && selecteur == 'tpsJeu'" class="glyphicon glyphicon-download"></span><span *ngIf="croissant && selecteur == 'tpsJeu'" class="glyphicon glyphicon-upload"> </span>
+    </button>
+    </div>
+
+    <div class="col-lg-2">
+    <button (click)="trier('appID')" class="Button-Input" #appID>
+        AppID<span *ngIf="!croissant && selecteur == 'appID'" class="glyphicon glyphicon-download"></span><span *ngIf="croissant && selecteur == 'appID'" class="glyphicon glyphicon-upload"> </span>
+    </button>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class="noPadding jeu col-lg-12">
+    <div *ngFor="let jeu of listJeuPrincipal" class="noPadding col-lg-2 pt-5" id="hexagon">
+        <!--- Composant hexagone, code --->
+        <div class="hexagon-item">
+            <div class="hex-item">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="hex-item">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <!-- La balise a permet d'affiche à l'écran la "carte" qui correspond au jeu -->
+            <a (click)="afficherCarteJeu(jeu)" class="hex-content">
+                <span class="hex-content-inner">
+                    <img *ngIf="jeu.img_icon_url" class="fit-picture" src="http://media.steampowered.com/steamcommunity/public/images/apps/{{jeu.appid}}/{{jeu.img_icon_url}}.jpg" alt="img" />
+                    <span class="title">{{jeu.name}}</span>
+                </span>
+                <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+
+    <div *ngIf="debordement" class="pt-5 col-lg-12">
+        <div class="{{posPlus[0]}}" id="hexagon">
+            <div *ngFor="let jeu of listJeuPlus" class="{{posPlus[1]}}">
+                <div class="{{posPlus[2]}}">
+                    <div class="hexagon-item">
+                        <div class="hex-item">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="hex-item">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <a (click)="afficherCarteJeu(jeu)" class="hex-content">
+                            <span class="hex-content-inner">
+                                <img class="fit-picture" src="http://media.steampowered.com/steamcommunity/public/images/apps/{{jeu.appid}}/{{jeu.img_icon_url}}.jpg" alt="img" />
+                                <span class="title">{{jeu.name}}</span>
+                            </span>
+                            <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- La carte qui s'affiche à l'appuie d'un jeu -->
+
+<div *ngIf="affichageCarte" class="container-fluid carteInfos">
+    <div class="carteInfos1 col-lg-4 col-lg-offset-4">
+      <!-- Le sommet de la carte avec le nom ainsi que le bouton pour close -->
+        <div class="footer">
+            <div class="name col-lg-8">
+                <h2>{{jeuSelected.name}}</h2>
+            </div>
+            <div class="col-lg-4">
+                <div class="col-lg-4 col-lg-offset-8">
+                    <span (click)="masquerCarteJeu()" class="glyphicon glyphicon-remove"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Le corps avec les jeux -->
+        <div id="corps" class="pt-3">
+          <h3>Id : {{jeuSelected.appid}}</h3>
+          <h3>Temps total : {{(jeuSelected.playtime_forever/60).toFixed(2)}} heures</h3>
+        </div>
+    </div>
+</div>
